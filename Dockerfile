@@ -1,5 +1,5 @@
 #   Stage I
-FROM golang:1.25.0 AS build
+FROM golang:1.26.0 AS build
 WORKDIR /app
 COPY application/go.mod .
 COPY application/app.go .
