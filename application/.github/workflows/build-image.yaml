@@ -14,3 +14,6 @@ jobs:
       - name: Install Grype
         id: install-grype
         run: curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sudo sh -s -- -b /usr/local/bin
+      - name: Login to Docker Hub
+        id: docker-login
+        run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USER }}/prometheus-go-app:$(git rev-parse --short "$GITHUB_SHA")
