@@ -23,3 +23,6 @@ jobs:
       - name: Scan Image for vulnerabilities
         id: image-scan
         run: grype -f critical ${{ secrets.DOCKER_USER }}/prometheus-go-app:$(git rev-parse --short "$GITHUB_SHA")
+      - name: Push The Image To Dockerhub
+        id: push-image
+        run: docker push ${{ secrets.DOCKER_USER }}/prometheus-go-app:$(git rev-parse --short "$GITHUB_SHA")
