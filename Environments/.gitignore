@@ -21,3 +21,8 @@ terraform.rc
 
 # Ignore sensitive environment variables file
 .env
+
+# Ignore any temporary files
+*.log
+*.out
+*.tmp
