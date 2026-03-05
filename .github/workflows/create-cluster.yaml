@@ -1,1 +1,5 @@
-name: a
+name: apply environment manifest
+on:
+  push:
+    branches:
+      - main
