@@ -16,3 +16,4 @@
 ```shell
   curl http://localhost:2112/metrics 
 ```
+- or Access through browser using URL: `http://localhost:2112/metrics`
