@@ -2,3 +2,9 @@
 *.tfstate
 *.tfstate.backup
 *.tfplan
+
+# Ignore any .terraform directories
+**/.terraform/
+
+# Ignore any crash log files
+crash.log
