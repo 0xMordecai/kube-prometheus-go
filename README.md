@@ -1,6 +1,7 @@
 # kube-prometheus-go
 # Requirements
 - `Docker` installed
+- `curl` installed
 # To run the container
 - first: pull the image from `hub.docker/kings5layer/prometheus-go-app`
 ```shell
