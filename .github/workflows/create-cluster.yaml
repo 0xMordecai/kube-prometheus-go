@@ -11,3 +11,7 @@ jobs:
       - name: Install terraform
         id: install-terraform
         run: wget -O terraform.zip https://releases.hashicorp.com/terraform/1.14.3/terraform_1.14.3_linux_amd64.zip && unzip terraform.zip && chmod +x terraform && sudo mv terraform /usr/local/bin
+      - name: Install KinD
+        id: install-kind
+        working-directory: ./Terraform
+        run: curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.20.0/kind-linux-amd64 && chmod +x ./kind && sudo mv ./kind /usr/local/bin/kind
