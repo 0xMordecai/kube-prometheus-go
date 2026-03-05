@@ -9,3 +9,9 @@ variable "cluster_name" {
   type = string
   default = project-cluster
 }
+
+variable "node_image" {
+  description = "node image"
+  type = string
+  default = "kindest/node:v1.34.3"
+}
