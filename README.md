@@ -10,3 +10,8 @@
 ```shell
     docker run -d --name go-app -p 2112:2112 kings5layer/prometheus-go-app:46daaab
 ```
+# Access the metrics
+- To access the metrics run:
+```shell
+  curl http://localhost:2112/metrics 
+```
