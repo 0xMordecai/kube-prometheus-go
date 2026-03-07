@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-application
+  namespace: go-application
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: go-application
+  template:
+    metadata:
+      labels:
+        app: go-application
+      container:
+        name: go-application
+        image: kings5layer/prometheus-go-app:6980be7
+        ports:
+          - containerPort: 2112
