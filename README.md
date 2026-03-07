@@ -21,3 +21,13 @@
   curl http://localhost:2112/metrics 
 ```
 - or Access through browser using URL: `http://localhost:2112/metrics`
+
+# Setup Environment
+- first:
+  ```shell
+    cd Environments/Terraform
+  ```
+- second: run the script to apply the terraform configuration
+```shell
+    sh Scripts/terraform-apply.sh
+```
