@@ -26,9 +26,16 @@ spec:
             requests:
               memory: "256Mi"
               cpu: "200m"
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 2112
+              periodSeconds: 10
+              initialDelaySeconds: 10
+              failureThreshold: 3
           livenessProbe:
             httpGet:
-              path: /healthz
+              path: /
               port: 2112
               periodSeconds: 10
               initialDelaySeconds: 10
