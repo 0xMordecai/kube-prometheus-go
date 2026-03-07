@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -25,3 +26,10 @@ spec:
             requests:
               memory: "256Mi"
               cpu: "200m"
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 2112
+              periodSeconds: 10
+              initialDelaySeconds: 10
+              failureThreshold: 3
