@@ -2,6 +2,10 @@
 # Requirements
 - `Docker` installed
 - `curl` installed
+- `terraform` installed
+- `kubectl` installed
+- `helm` installed
+- `kind` installed
 # To run the container
 - first: pull the image from `hub.docker/kings5layer/prometheus-go-app`
 ```shell
