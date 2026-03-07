@@ -7,7 +7,7 @@ variable "branch" {
 variable "cluster_name" {
   description = "cluster name"
   type = string
-  default = project-cluster
+  default = "project-cluster"
 }
 
 variable "node_image" {
