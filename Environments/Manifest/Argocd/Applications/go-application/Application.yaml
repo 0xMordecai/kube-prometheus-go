@@ -1,0 +1,17 @@
+piVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: go-application
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/0xMordecai/kube-prometheus-go.git
+    targetRevision: main
+    path: Environments/Manifest/Argocd/Applications/go-application
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: go-application
+  syncPolicy:
+    automated:
+      selfHeal: true
