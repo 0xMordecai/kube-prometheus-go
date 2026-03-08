@@ -15,3 +15,12 @@
 ```shell
     sh Scripts/terraform-apply.sh
 ```
+# Setup ArgoCD
+**- first: move to the argocd environment directory**
+```shell
+  cd Environments/Manifest/Argocd
+```
+**- second: apply the argocd manifests using the script**
+```shell
+  sh scripts/install-argocd.sh
+```
