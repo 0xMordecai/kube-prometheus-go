@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/0xMordecai/kube-prometheus-go.git
     targetRevision: main
-    path: Environments/Manifest/Argocd/Applications/go-application
+    path: Environments/Manifest/Application
   destination:
     server: https://kubernetes.default.svc
     namespace: go-application
