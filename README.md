@@ -1,7 +1,6 @@
 # kube-prometheus-go
 # Requirements
 - `Docker` installed
-- `curl` installed
 - `terraform` installed
 - `kubectl` installed
 - `helm` installed
