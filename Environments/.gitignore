@@ -8,7 +8,7 @@
 
 # Ignore any crash log files
 crash.log
-
+project-cluster---config
 # Ignore override files as they are usually used to override resources locally and should not be committed
 override.tf
 override.tf.json
