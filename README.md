@@ -24,3 +24,12 @@
 ```shell
   sh scripts/install-argocd.sh
 ```
+# Deploy Go Application
+**- first: move to the go application environment directory**
+```shell
+  cd Environments/Manifest/Applications/go-application
+```
+**- second: apply the go application manifests using the script**
+```shell
+  sh scripts/install-go-app.sh
+```
