@@ -27,7 +27,7 @@
 ```
 **- third: apply Deployment manifests**
 ```shell
-  kubectl apply -f deployment.yaml
+  kubectl apply -f Deployment.yaml
 ```
 **- fourth: apply Service manifests**
 ```shell
