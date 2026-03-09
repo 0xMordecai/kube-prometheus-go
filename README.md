@@ -37,3 +37,21 @@
 ```shell
   kubectl apply -f NodePort.yaml
 ```
+
+# Deploy kube-prometheus
+**- first: head to the kube-prometheus-stack directory**, we will use helm to install kube-prometheus
+```shell
+  cd Environments/Manifest/Monitoring/kube-prometheus-stack/helm/82.10.1
+```
+**- second: Add the Prometheus Community Helm repository**
+```shell
+  helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+```
+**- third:Install the kube-prometheus-stack Helm chart**
+```shell
+  helm install my-kube-prometheus-stack prometheus-community/kube-prometheus-stack --version 82.10.1
+```
+**or you can use the script within the directory**
+```shell
+  sh install-kube-prometheus-stack
+```
