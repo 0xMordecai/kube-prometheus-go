@@ -50,7 +50,7 @@
 ```
 **- third: Deploy the chart into a new namespace "monitoring"**
 ```shell
-  helm install my-kube-prometheus-stack prometheus-community/kube-prometheus-stack --version 82.10.1
+  helm install my-kube-prometheus-stack prometheus-community/kube-prometheus-stack --version 82.10.1 --namespace monitoring --create-namespace
 ```
 **or you can use the script within the directory**
 ```shell
