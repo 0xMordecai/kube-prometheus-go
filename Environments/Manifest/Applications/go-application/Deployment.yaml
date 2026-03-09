@@ -13,30 +13,30 @@ spec:
     metadata:
       labels:
         app: go-application
-      containers:
-        - name: go-application
-          image: kings5layer/prometheus-go-app:6980be7
-          imagePullPolicy: Always
-          ports:
-            - containerPort: 2112
-          resources:
-            limits:
-              memory: "512Mi"
-              cpu: "400m"
-            requests:
-              memory: "256Mi"
-              cpu: "200m"
-          readinessProbe:
-            httpGet:
-              path: /
-              port: 2112
-              periodSeconds: 10
-              initialDelaySeconds: 10
-              failureThreshold: 3
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 2112
-              periodSeconds: 10
-              initialDelaySeconds: 10
-              failureThreshold: 3
+    containers:
+      - name: go-application
+        image: kings5layer/prometheus-go-app:6980be7
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 2112
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "400m"
+          requests:
+            memory: "256Mi"
+            cpu: "200m"
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 2112
+            periodSeconds: 10
+            initialDelaySeconds: 10
+            failureThreshold: 3
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 2112
+            periodSeconds: 10
+            initialDelaySeconds: 10
+            failureThreshold: 3
