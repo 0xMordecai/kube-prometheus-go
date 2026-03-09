@@ -15,6 +15,10 @@
 ```shell
     sh Scripts/terraform-apply.sh
 ```
+**- To Destroy terraform resources**
+```shell
+    sh Scripts/terraform-destroy.sh
+```
 
 # Deploy Go Application
 **- first: move to the go application environment directory**
