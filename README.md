@@ -21,21 +21,21 @@
 ```
 
 # Deploy Go Application
-**- first: move to the go application environment directory**
+**- move to the go application environment directory**
 ```shell
   cd Environments/Manifest/Applications/go-application
 ```
-**- second: create go-application Namespace**
+**- create go-application Namespace**
 ```shell
   kubectl apply -f namespace.yaml
 ```
-**- third: apply Deployment manifests**
+**- apply Deployment manifests**
 ```shell
   kubectl apply -f Deployment.yaml
 ```
-**- fourth: apply Service manifests**
+**- apply Service manifests**
 ```shell
-  kubectl apply -f NodePort.yaml
+  kubectl apply -f Service.yaml
 ```
 
 # Deploy kube-prometheus
