@@ -39,20 +39,22 @@
 ```
 
 # Deploy kube-prometheus
-**- first: head to the kube-prometheus-stack directory**, we will use helm to install kube-prometheus
-```shell
-  cd Environments/Manifest/Monitoring/kube-prometheus-stack/helm/82.10.1
-```
-**- second: Add the Prometheus Community Helm repository**
+**we will use `helm` to deploy kube-prometheus-stack**
+
+**- Add the Prometheus Community Helm repository**
 ```shell
   helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
   helm repo update
 ```
-**- third: Deploy the chart into a new namespace "monitoring"**
+**- Deploy the chart into a new namespace "monitoring"**
 ```shell
   helm install my-kube-prometheus-stack prometheus-community/kube-prometheus-stack --version 82.10.1 --namespace monitoring --create-namespace
 ```
-**or you can use the script within the directory**
+**- or you can use the script within the directory**
+**head to the kube-prometheus-stack directory**
+```shell
+  cd Environments/Manifest/Monitoring/kube-prometheus-stack/helm/82.10.1
+```
 ```shell
   sh install-kube-prometheus-stack
 ```
