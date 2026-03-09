@@ -5,9 +5,9 @@ metadata:
   name: go-application
   namespace: go-application
 spec:
-  type: NodePort
   ports:
     - port: 2112
       targetPort: 2112
+      name: web
   selector:
     app: go-application
