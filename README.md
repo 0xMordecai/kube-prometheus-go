@@ -15,21 +15,21 @@
 ```shell
     sh Scripts/terraform-apply.sh
 ```
-# Setup ArgoCD
-**- first: move to the argocd environment directory**
-```shell
-  cd Environments/Manifest/Argocd
-```
-**- second: apply the argocd manifests using the script**
-```shell
-  sh scripts/install-argocd.sh
-```
+
 # Deploy Go Application
 **- first: move to the go application environment directory**
 ```shell
   cd Environments/Manifest/Applications/go-application
 ```
-**- second: apply the go application manifests using the script**
+**- second: create go-application Namespace**
 ```shell
-  sh scripts/install-go-app.sh
+  kubectl apply -f namespace.yaml
+```
+**- third: apply Deployment manifests**
+```shell
+  kubectl apply -f deployment.yaml
+```
+**- fourth: apply Service manifests**
+```shell
+  kubectl apply -f NodePort.yaml
 ```
