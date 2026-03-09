@@ -46,8 +46,9 @@
 **- second: Add the Prometheus Community Helm repository**
 ```shell
   helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+  helm repo update
 ```
-**- third:Install the kube-prometheus-stack Helm chart**
+**- third: Deploy the chart into a new namespace "monitoring"**
 ```shell
   helm install my-kube-prometheus-stack prometheus-community/kube-prometheus-stack --version 82.10.1
 ```
