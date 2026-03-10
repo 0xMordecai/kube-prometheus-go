@@ -62,3 +62,13 @@
 ```shell
   kubectl apply -f ConfigMap.yaml
 ```
+
+# Access Prometheus
+**- get the Prometheus service name**
+```shell
+  kubectl get svc -n monitoring
+```
+**- access Prometheus UI**
+```shell
+  kubectl port-forward service/prometheus-operated -n monitoring 9090:9090 
+```
