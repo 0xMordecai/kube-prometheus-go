@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: go-application-dashboard
-  namespace: go-application
+  namespace: monitoring
   labels:
     grafana_dashboard: "1"
 data:
