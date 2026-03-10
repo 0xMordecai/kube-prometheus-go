@@ -4,7 +4,7 @@ metadata:
   name: go-application
   namespace: monitoring
   labels:
-    release: my-kube-prometheus-stack # matches kube-prometheus-stack release label
+    release: prometheus # matches kube-prometheus-stack release label
 spec:
   selector:
     matchLabels:
