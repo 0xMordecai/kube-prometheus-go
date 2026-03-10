@@ -72,3 +72,9 @@
 ```shell
   kubectl port-forward service/prometheus-operated -n monitoring 9090:9090 
 ```
+**- access Prometheus targets to verify scraping**
+```shell
+  open http://localhost:9090/targets
+```
+**- you will see the Prometheus UI dashboard**
+![Prometheus dashboard](images/promtheus.png)
