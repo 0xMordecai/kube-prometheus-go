@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: go-application
-          image: kings5layer/prometheus-go-app:6980be7
+          image: kings5layer/prometheus-go-app:9d1fe0d
           imagePullPolicy: Always
           ports:
             - containerPort: 2112
