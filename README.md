@@ -20,24 +20,6 @@
     sh Scripts/terraform-destroy.sh
 ```
 
-# Deploy Go Application
-**- move to the go application environment directory**
-```shell
-  cd Environments/Manifest/Applications/go-application
-```
-**- create go-application Namespace**
-```shell
-  kubectl apply -f namespace.yaml
-```
-**- apply Deployment manifests**
-```shell
-  kubectl apply -f Deployment.yaml
-```
-**- apply Service manifests**
-```shell
-  kubectl apply -f Service.yaml
-```
-
 # Deploy kube-prometheus
 **we will use `helm` to deploy kube-prometheus-stack**
 
@@ -57,4 +39,22 @@
 ```
 ```shell
   sh install-kube-prometheus-stack
+```
+
+# Deploy Go Application
+**- move to the go application environment directory**
+```shell
+  cd Environments/Manifest/Applications/go-application
+```
+**- create go-application Namespace**
+```shell
+  kubectl apply -f namespace.yaml
+```
+**- apply Deployment manifests**
+```shell
+  kubectl apply -f Deployment.yaml
+```
+**- apply Service manifests**
+```shell
+  kubectl apply -f Service.yaml
 ```
