@@ -46,10 +46,6 @@
 ```shell
   cd Environments/Manifest/Applications/go-application
 ```
-**- create go-application Namespace**
-```shell
-  kubectl apply -f namespace.yaml
-```
 **- apply Deployment manifests**
 ```shell
   kubectl apply -f Deployment.yaml
