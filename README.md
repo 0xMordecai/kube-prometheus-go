@@ -58,3 +58,11 @@
 ```shell
   kubectl apply -f Service.yaml
 ```
+**- apply ServiceAccount manifests**
+```shell
+  kubectl apply -f ServiceAccount.yaml
+```
+**- apply Grafana custom dashboard configs**
+```shell
+  kubectl apply -f ConfigMap.yaml
+```
