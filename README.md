@@ -95,3 +95,5 @@ As you can see, Prometheus is scraping the go application's metrics endpoint.
   - **username: admin**
   - **password:** 
     **to get the password, run `kubectl get secret prometheus-grafana -n monitoring -o jsonpath='{.data.basic-auth-password}' | base64 -d`**
+
+- **then,to go to the Grafana dashboards** go to `http://localhost:3000/dashboards`
