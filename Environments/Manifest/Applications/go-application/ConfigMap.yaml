@@ -1,0 +1,196 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: go-application-dashboard
+  namespace: monitoring
+  labels:
+    grafana_dashboard: "1"
+data:
+  go-application-dashboard.json: |
+    {
+      "annotations": {
+        "list": [
+          {
+            "builtIn": 1,
+            "datasource": "-- Grafana --",
+            "enable": true,
+            "hide": true,
+            "iconColor": "rgba(0,211,255,1)",
+            "name": "Annotations & Alerts",
+            "type": "dashboard"
+          }
+        ]
+      },
+      "editable": true,
+      "graphTooltip": 0,
+      "id": null,
+      "links": [],
+      "panels": [
+
+        {
+          "datasource": "Prometheus",
+          "type": "graph",
+          "title": "Request Rate",
+          "id": 1,
+          "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+          "lines": true,
+          "fill": 1,
+          "linewidth": 1,
+          "targets": [
+            {
+              "expr": "sum(rate(http_requests_total[1m])) by (method,path)",
+              "legendFormat": "{{method}} {{path}}",
+              "refId": "A"
+            }
+          ],
+          "xaxis": { "mode": "time", "show": true },
+          "yaxes": [
+            { "format": "reqps", "show": true },
+            { "format": "short", "show": true }
+          ]
+        },
+
+        {
+          "datasource": "Prometheus",
+          "type": "graph",
+          "title": "Average Response Time",
+          "id": 2,
+          "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+          "lines": true,
+          "fill": 1,
+          "targets": [
+            {
+              "expr": "rate(http_request_duration_seconds_sum[1m]) / rate(http_request_duration_seconds_count[1m])",
+              "legendFormat": "{{method}} {{path}}",
+              "refId": "A"
+            }
+          ],
+          "xaxis": { "mode": "time", "show": true },
+          "yaxes": [
+            { "format": "s", "show": true },
+            { "format": "short", "show": true }
+          ]
+        },
+
+        {
+          "datasource": "Prometheus",
+          "type": "graph",
+          "title": "In Flight Requests",
+          "id": 3,
+          "gridPos": { "h": 8, "w": 12, "x": 0, "y": 8 },
+          "lines": true,
+          "fill": 1,
+          "targets": [
+            {
+              "expr": "http_requests_in_flight",
+              "legendFormat": "in-flight",
+              "refId": "A"
+            }
+          ],
+          "xaxis": { "mode": "time", "show": true },
+          "yaxes": [
+            { "format": "short", "show": true },
+            { "format": "short", "show": true }
+          ]
+        },
+
+        {
+          "datasource": "Prometheus",
+          "type": "graph",
+          "title": "Processed Operations",
+          "id": 4,
+          "gridPos": { "h": 8, "w": 12, "x": 12, "y": 8 },
+          "lines": true,
+          "fill": 1,
+          "targets": [
+            {
+              "expr": "rate(myapp_processed_ops_total[1m])",
+              "legendFormat": "ops/sec",
+              "refId": "A"
+            }
+          ],
+          "xaxis": { "mode": "time", "show": true },
+          "yaxes": [
+            { "format": "ops", "show": true },
+            { "format": "short", "show": true }
+          ]
+        },
+
+        {
+          "datasource": "Prometheus",
+          "type": "graph",
+          "title": "Memory Usage",
+          "id": 5,
+          "gridPos": { "h": 8, "w": 12, "x": 0, "y": 16 },
+          "lines": true,
+          "fill": 1,
+          "targets": [
+            {
+              "expr": "process_resident_memory_bytes",
+              "legendFormat": "Memory",
+              "refId": "A"
+            }
+          ],
+          "xaxis": { "mode": "time", "show": true },
+          "yaxes": [
+            { "format": "bytes", "show": true },
+            { "format": "short", "show": true }
+          ]
+        },
+
+        {
+          "datasource": "Prometheus",
+          "type": "graph",
+          "title": "CPU Usage",
+          "id": 6,
+          "gridPos": { "h": 8, "w": 12, "x": 12, "y": 16 },
+          "lines": true,
+          "fill": 1,
+          "targets": [
+            {
+              "expr": "rate(process_cpu_seconds_total[1m])",
+              "legendFormat": "CPU",
+              "refId": "A"
+            }
+          ],
+          "xaxis": { "mode": "time", "show": true },
+          "yaxes": [
+            { "format": "percentunit", "show": true },
+            { "format": "short", "show": true }
+          ]
+        },
+
+        {
+          "datasource": "Prometheus",
+          "type": "graph",
+          "title": "Goroutines",
+          "id": 7,
+          "gridPos": { "h": 8, "w": 24, "x": 0, "y": 24 },
+          "lines": true,
+          "fill": 1,
+          "targets": [
+            {
+              "expr": "go_goroutines",
+              "legendFormat": "goroutines",
+              "refId": "A"
+            }
+          ],
+          "xaxis": { "mode": "time", "show": true },
+          "yaxes": [
+            { "format": "short", "show": true },
+            { "format": "short", "show": true }
+          ]
+        }
+
+      ],
+      "schemaVersion": 25,
+      "style": "dark",
+      "tags": ["go","prometheus"],
+      "templating": { "list": [] },
+      "time": { "from": "now-6h", "to": "now" },
+      "timepicker": {},
+      "timezone": "",
+      "title": "Go HTTP Application Dashboard",
+      "uid": "go_http_dashboard",
+      "version": 1
+    }
